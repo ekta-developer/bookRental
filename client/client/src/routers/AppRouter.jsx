@@ -2,6 +2,7 @@ import React, { lazy, Suspense, useLayoutEffect } from "react";
 import { Route, Router, Routes, useLocation } from "react-router-dom";
 import Dashboard from "../pages/dashboard/Dashboard";
 import MainLayout from "../component/Layout/MainLayout";
+import Registration from "../pages/Auth/Registration";
 
 const Home = lazy(() => import("../pages/Home"));
 const About = lazy(() => import("../pages/About"));
@@ -14,10 +15,15 @@ const AppRouter = () => {
   return (
     <>
       <Routes>
+        {/* Route without MainLayout */}
+        {/* <Route path="/register" element={<Registration />} /> */}
+
+        {/* Routes with MainLayout wrapper */}
         <Route path="/" element={<MainLayout />}>
           {/* <Route index element={<Home />} /> */}
           {/* <Route path="about" element={<About />} /> */}
           {/* <Route path="contact" element={<Contact />} /> */}
+          {/* <Route path="dashboard" element={<Dashboard />} /> */}
         </Route>
       </Routes>
     </>
